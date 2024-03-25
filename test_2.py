@@ -4,7 +4,7 @@ import pandas as pd
 # Función para cargar y preparar los datos desde Excel
 def cargar_datos_excel(ruta):
     try:
-        df = pd.read_excel(ruta, engine='openpyxl')
+        df = pd.read_csv(ruta, engine='openpyxl')
         df = df.dropna(subset=['item', 'animal'], how='any').reset_index(drop=True)
         return df
     except Exception as e:
@@ -12,7 +12,7 @@ def cargar_datos_excel(ruta):
         return pd.DataFrame()
 
 # Cargar el archivo Excel con preguntas
-ruta_excel = './bd.xlsx'  # Asegúrate de ajustar esto a la ruta correcta
+ruta_excel = './bd.csv'  # Asegúrate de ajustar esto a la ruta correcta
 preguntas_df = cargar_datos_excel(ruta_excel)
 
 # Inicializar el estado de sesión si es necesario
