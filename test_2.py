@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 
 # Función para cargar y preparar los datos desde Excel
-def cargar_datos_excel(ruta):
+def cargar_datos_csv(ruta):
     try:
-        df = pd.read_excel(ruta)
+        df = pd.read_csv(ruta)
         df = df.dropna(subset=['item', 'animal'], how='any').reset_index(drop=True)
         return df
     except Exception as e:
@@ -12,8 +12,8 @@ def cargar_datos_excel(ruta):
         return pd.DataFrame()
 
 # Cargar el archivo Excel con preguntas
-ruta_excel = '/Users/agustinredondoarena/Desktop/LexDataCore/Test/streamlit_test/bd.xlsx'  # Asegúrate de ajustar esto a la ruta correcta
-preguntas_df = cargar_datos_excel(ruta_excel)
+ruta_csv = 'bd.csv'  # Asegúrate de ajustar esto a la ruta correcta
+preguntas_df = cargar_datos_csv(ruta_csv)
 
 # Inicializar el estado de sesión si es necesario
 if 'preguntas_mostradas' not in st.session_state:
