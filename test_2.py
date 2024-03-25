@@ -12,7 +12,7 @@ def cargar_datos_excel(ruta):
         return pd.DataFrame()
 
 # Cargar el archivo Excel con preguntas
-ruta_excel = '/Users/agustinredondoarena/Desktop/LexDataCore/Test/streamlit_test/bd.xlsx'  # Asegúrate de ajustar esto a la ruta correcta
+ruta_excel = './bd.xlsx'  # Asegúrate de ajustar esto a la ruta correcta
 preguntas_df = cargar_datos_excel(ruta_excel)
 
 # Inicializar el estado de sesión si es necesario
