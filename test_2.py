@@ -4,7 +4,7 @@ import pandas as pd
 # Función para cargar y preparar los datos desde Excel
 def cargar_datos_excel(ruta):
     try:
-        df = pd.read_excel(ruta)
+        df = pd.read_excel(ruta, engine='openpyxl')
         df = df.dropna(subset=['item', 'animal'], how='any').reset_index(drop=True)
         return df
     except Exception as e:
